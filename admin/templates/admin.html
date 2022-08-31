@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+            {% block content %}
+<h2>Admin page</h2>
+<div>
+    Admin - <small> {{ current_user.email }}</small>
+</div>
+<table class="table users">
+    <tr>
+        <td><a href="{{ url_for('users') }}" class="btn btn-default">Users</a></td>
+    </tr>
+    
+    <tr>
+        <td><a href="{{ url_for('admin_listings') }}" class="btn btn-default">Listings</a></td>
+    </tr>
+</table>
+        {% endblock %}

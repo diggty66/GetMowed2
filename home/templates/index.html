@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Get Mowed</h1>
+    <p class="lead">Get Mowed is an application that can provide the service mowing your property.</p>
+    <p><a href="/about" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Get Mowed Here</h2>
+        <p>Here you can get the mow you need for your property. Login or register to continue.</p>
+        <p><a class="btn btn-default" href="/register_mowee">Register Mowee&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Provide Mowing Service</h2>
+        <p>Here you can add yopurself as a professional canidate to provide mowing services.</p>
+        <p><a class="btn btn-default" href="/register_mower">Register Mower&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Not Just a Mow</h2>
+        <p>Here you can find a list of professional landscapers that provide services more than just mowing.</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+
+
+{% endblock %}
