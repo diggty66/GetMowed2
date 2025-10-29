@@ -4,7 +4,7 @@ The flask application package.
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_mailing import Mail, Message
+from flask_mail import Mail, Message
 import json
  
 app = Flask(__name__)
