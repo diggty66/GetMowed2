@@ -5,11 +5,11 @@ from flask import Flask, render_template, flash, redirect, request, session, log
 from functools import wraps
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from GetMowed2.models import User, Role, Profile, Articles
-from GetMowed2.forms import LoginForm, RegisterForm, RegisterMowerForm, RegisterAdminForm
-from GetMowed2.emails.token import generate_confirmation_token
-from GetMowed2.emails.email import send_email
-from GetMowed2 import app, db, login_manager
+from app.models import User, Role, Profile, Articles
+from app.forms import LoginForm, RegisterForm, RegisterMowerForm, RegisterAdminForm
+from app.emails.token import generate_confirmation_token
+from app.emails.email import send_email
+from app import app, db, login_manager
 from flask_login import login_required, login_user, current_user, logout_user
 
 dashboards_blueprint = Blueprint(

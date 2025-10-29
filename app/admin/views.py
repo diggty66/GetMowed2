@@ -2,12 +2,12 @@
 Routes and views for the admin blueprint.
 """
 from flask import Flask, render_template, flash, redirect, request, session, logging, url_for, Blueprint
-from GetMowed2.forms import UserForm, RegisterForm
-from GetMowed2 import app, db, login_manager
+from app.forms import UserForm, RegisterForm
+from app import app, db, login_manager
 from flask_login import login_required, login_user, current_user, logout_user
-from GetMowed2.decorators import check_email_confirmed, admin_required
+from app.decorators import check_email_confirmed, admin_required
 from werkzeug.security import generate_password_hash, check_password_hash
-from GetMowed2.models import User, Role, Profile, Articles
+from app.models import User, Role, Profile, Articles
 from datetime import datetime
 
 admin_blueprint = Blueprint(

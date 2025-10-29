@@ -4,12 +4,12 @@ Routes and views for the emails blueprint.
 from flask import Flask, render_template, flash, redirect, request, session, logging, url_for, Blueprint
 from functools import wraps
 from datetime import datetime
-from GetMowed2.models import User
-from GetMowed2 import app, db, login_manager
+from app.models import User
+from app import app, db, login_manager
 from flask_login import login_required, login_user, current_user, logout_user
-from GetMowed2.emails.token import generate_confirmation_token, confirm_token
-from GetMowed2.emails.email import send_email
-from GetMowed2.decorators import check_email_confirmed
+from app.emails.token import generate_confirmation_token, confirm_token
+from app.emails.email import send_email
+from app.decorators import check_email_confirmed
 
 emails_blueprint = Blueprint(
     'emails_blueprint',

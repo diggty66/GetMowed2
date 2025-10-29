@@ -1,6 +1,6 @@
-from GetMowed2 import app, db, login_manager
+from app import app, db, login_manager
 from functools import wraps
-from GetMowed2.models import Role, User
+from app.models import Role, User
 from flask import flash, redirect, url_for
 from flask_login import current_user
 

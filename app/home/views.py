@@ -3,7 +3,7 @@ Routes and views for the home blueprint.
 """
 from flask import Flask, render_template, flash, redirect, request, session, logging, url_for, Blueprint
 from datetime import datetime
-from GetMowed2 import app
+from app import app
 
 home_blueprint = Blueprint(
     'home_blueprint',

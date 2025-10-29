@@ -3,11 +3,11 @@ Routes and views for the profile blueprint.
 """
 from flask import Flask, render_template, flash, redirect, request, session, logging, url_for, Blueprint
 from datetime import datetime
-from GetMowed2.models import User, Profile
-from GetMowed2.forms import ProfileForm
-from GetMowed2 import app, db, login_manager
+from app.models import User, Profile
+from app.forms import ProfileForm
+from app import app, db, login_manager
 from flask_login import login_required, login_user, current_user, logout_user
-from GetMowed2.decorators import check_email_confirmed
+from app.decorators import check_email_confirmed
 
 profiles_blueprint = Blueprint(
     'profiles_blueprint',
