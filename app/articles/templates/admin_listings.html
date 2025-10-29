@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1> Listings </h1>
+<div>
+    Admin - <small> {{current_user.email}}</small>
+</div>
+<a href="add_listing" class="btn btn-default pull-right"> Add Listing</a>
+<hr />
+<table class="table listings">
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Role</th>
+        <th></th>
+    </tr>
+    {% for listing in listings %}
+    <tr>
+        <td class="list-group-item"><a href="listing/{{listing.id}}">{{listing.title}}</a></td>
+        <td>{{listing.author}}</td>
+        <td>{{ role_name.name }}</td>
+        <td><a href="edit_listing/{{listing.id}}" class="btn btn-default pull-right">EDIT</a></td>
+        <td>
+            <form action="{{url_for('delete_listing', id=listing.id)}}" method="post">
+                <input type="hidden" name="_method" value="post" />
+                <input type="submit" value="DELETE" class="btn btn-danger" />
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

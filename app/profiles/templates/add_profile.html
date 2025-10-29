@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Add Profile</h1>
+{% from "includes/_formhelpers.html" import render_field %}
+<form method="POST" action="">
+    <div class="form-group">
+        {{ render_field(form.username, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.first_name, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.last_name, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.address, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.address2, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.town, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.state, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.zip_code, class_="form-control", id="editor") }}
+    </div>
+    <p><input class="btn btn-primary" type="submit" value="Submit" /></p>
+</form>
+{% endblock %}

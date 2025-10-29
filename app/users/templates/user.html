@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{{ current_user.email }}</h1>
+<small> Admin {{ user.username }} on {{ user.create_date }}</small>
+<hr />
+<div>
+    {{ user.id | safe}}
+</div>
+{% endblock %}

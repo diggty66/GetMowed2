@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{{listing.title}}</h1>
+<small> Written by {{listing.author}} on {{listing.create_date}}</small>
+<hr />
+<div>
+    {{listing.body | safe}}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Dashboard <small>Welcome {{ current_user.email }}</small></h1>
+<a class="btn btn-success" href="/add_listing"> Add Listing</a>
+{% if profile_data == None %}
+<a href="/profile/add_profile" class="btn btn-default pull-right">ADD PROFILE</a>
+{% else %}
+<a href="profile/{{ profile_data.id }}" class="btn btn-default pull-right">PROFILE</a>
+{% endif %}
+<hr />
+<table class="table articlestable">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for listing in listings %}
+    {% if current_user.email == listing.author %}
+    <tr>
+        <td>{{listing.id}}</td>
+        <td>{{listing.title}}</td>
+        <td>{{listing.author}}</td>
+        <td>{{listing.create_date}}</td>
+        <td><a href="edit_listing/{{listing.id}}" class="btn btn-default pull-right">EDIT</a></td>
+        <td>
+            <form action="{{url_for('delete_listing', id=listing.id)}}" method="post">
+                <input type="hidden" name="_method" value="post" />
+                <input type="submit" value="DELETE" class="btn btn-danger" />
+            </form>
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}
